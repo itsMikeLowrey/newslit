@@ -11,25 +11,25 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'slug',
-      type: 'slug',
-      options: {source: 'title'},
+      name: 'answer',
+      type: 'boolean',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'publishedAt',
-      type: 'datetime',
-      initialValue: () => new Date().toISOString(),
+      type: 'number',
+      initialValue: () => new Date().getTime(),
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'image',
       type: 'image',
+      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'body',
-      type: 'array',
-      of: [{type: 'block'}],
+      name: 'article',
+      type: 'url',
+      validation: (rule) => rule.required(),
     }),
   ],
 })
